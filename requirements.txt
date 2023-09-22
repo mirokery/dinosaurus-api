@@ -1,0 +1,6 @@
+fastapi[all]
+uvicorn
+Pillow
+torch
+torchvision
+ultralytics
