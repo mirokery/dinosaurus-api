@@ -12,7 +12,7 @@ import numpy as np
 app = FastAPI()
 
 model_classify = MyArchitecture(3, 5)
-model_classify.load_state_dict(torch.load(r"model/classfication_model.pth", map_location=torch.device('cpu')))
+# model_classify.load_state_dict(torch.load(r"model/classfication_model.pth", map_location=torch.device('cpu')))
 
 transform_classify = transforms.Compose([
     transforms.Resize((150, 150)),  # Resize to a fixed size
@@ -21,8 +21,8 @@ transform_classify = transforms.Compose([
 ])
 
 
-model_YOLO_detection = YOLO(r"model/YOLOv8detection.pt")
-model_YOLO_segmentation = YOLO(r"model/YOLOv8segmentation.pt")
+model_YOLO_detection = YOLO(r"YOLOv8detection.pt")
+model_YOLO_segmentation = YOLO(r"YOLOv8segmentation.pt")
 
 def classify_image(image_bytes):
 
